@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= title %>
+  </title>
+  <!--<link rel="stylesheet" href="/css/style.css">-->
+</head>
+
+<body>
+  <!-- Navbar común -->
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/products">Products</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sección de contenido dinámico -->
+  <main>
+    <%- include(body); %> <!-- Incluir la vista específica -->
+  </main>
+
+  <!-- Footer común -->
+  <footer>
+    <p>&copy; 2024 Tastbite</p>
+  </footer>
+</body>
+
+</html>
