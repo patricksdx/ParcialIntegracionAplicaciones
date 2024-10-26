@@ -1,0 +1,50 @@
+<div class="flex justify-center items-center py-40 bg-gray-100">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-96">
+        <div class="flex justify-between mb-4">
+            <button id="loginBtn" class="w-1/2 py-2 font-semibold border-b-2 border-black text-black">Login</button>
+            <button id="registerBtn" class="w-1/2 py-2 font-semibold text-gray-500">Register</button>
+        </div>
+
+        <div id="loginForm" class="space-y-4">
+            <input type="email" placeholder="Email" class="w-full p-2 border ">
+            <input type="password" placeholder="Password" class="w-full p-2 border ">
+            <button class="w-full mt-6 px-6 py-2 bg-white text-black border border-black rounded transition hover:bg-[#dc2626] hover:border-white hover:text-white">Login</button>
+        </div>
+
+        <div id="registerForm" class="hidden space-y-4">
+            <input type="text" placeholder="Username" class="w-full p-2 border ">
+            <input type="email" placeholder="Email" class="w-full p-2 border ">
+            <input type="password" placeholder="Password" class="w-full p-2 border ">
+            <button class="w-full mt-6 px-6 py-2 bg-white text-black border border-black rounded transition hover:bg-[#dc2626] hover:border-white hover:text-white">Register</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const loginBtn = document.getElementById('loginBtn');
+    const registerBtn = document.getElementById('registerBtn');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+
+    function showLoginForm() {
+        loginForm.classList.remove('hidden');
+        registerForm.classList.add('hidden');
+        loginBtn.classList.add('border-b-2', 'border-black', 'text-black');
+        registerBtn.classList.remove('border-b-2', 'border-black', 'text-black');
+        registerBtn.classList.add('text-gray-500');
+    }
+
+    function showRegisterForm() {
+        registerForm.classList.remove('hidden');
+        loginForm.classList.add('hidden');
+        registerBtn.classList.add('border-b-2', 'border-black', 'text-black');
+        loginBtn.classList.remove('border-b-2', 'border-black', 'text-black');
+        loginBtn.classList.add('text-gray-500');
+    }
+
+    loginBtn.addEventListener('click', showLoginForm);
+    registerBtn.addEventListener('click', showRegisterForm);
+
+    // Mostrar el formulario de inicio de sesión por defecto
+    showLoginForm();
+</script>
